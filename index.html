@@ -1,24 +1,74 @@
 <html>
     <head>
+        <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css?family=Averia+Libre|Metamorphous" rel="stylesheet"> 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <style>
-            body {
-                font-family: 'Averia Libre', cursive;
+            @page {
+                size: 21cm 29.7cm;
+                margin: 27mm 16mm 27mm 16mm
             }
+
+            body {
+                page: "The Barbarian";
+                font-family: 'Averia Libre', cursive;
+                background-image: linear-gradient( #8a8a8a, #dadada);
+                height: 100%;
+            }
+
             .classname { 
                 font-family: 'Metamorphous', cursive; 
+            }
+        
+            .name, .level, .XP {
+                display: inline-block;
+                background: white;
+                margin: 4px;
+                padding: 5px;
+            }
+
+            .name { min-width: 50% }
+            .name::before { content: "NAME: " }
+
+            .level::before { content: "LEVEL: " }
+            .XP::before { content: "XP: " }
+
+            .header {
+                background: black;
+                color: white;
+                padding: 5px;
+            }
+        
+            .look.keys {
+               text-transform: capitalize;
             }
         </style>
     </head>
     <body>
         <div class="classname">The Barbarian</div>
-        <div class="name">Name</div>
-        <div class="level">Level</div>
-        <div class="xp">XP</div>
+        <div class="name"></div>
+        <div class="level"></div>
+        <div class="xp"></div>
+        <div class="look">
+            <div class="header">LOOK</div>
+            <span>Choose one for each or write your own:</span>
+        </div>
         <script>
+            var json = undefined;
             $.getJSON( 'charactersheets/barbarian.json', function( data ) {
-                console.log( data );
+                json = data; 
+                $( '.name' ).text( data[ "name" ] );
+                $( '.level' ).text( data[ "level" ] );
+                $( '.xp' ).text( data[ "xp" ] );
+                var looks = data.class.look;
+                var lookElement = $( '.look' );
+                var keys = Object.keys( looks );
+                for( var index in  keys ) {
+                    var key = keys[ index ];
+                    var look = looks[ key ];
+                    console.log( key );
+                    lookElement.append( '<div class="look keys">' + key + ':<input type="text"></div>' )
+                }
             } );
         </script>
     </body>
