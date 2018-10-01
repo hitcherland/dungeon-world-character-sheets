@@ -172,7 +172,7 @@
             },
             "War Cry": {
                 "level requirement": 6,
-                "description": "When you *enter battle with a show of force* (a shout, a rallying cry, a battle dance) roll+Cha.  On a 10+ both, @on a 7-9 one or the other.",
+                "description": "When you *enter battle with a show of force* (a shout, a rallying cry, a battle dance) roll+Cha.  On a 10+ both, on a 7-9 one or the other.",
                 "list": [
                     "Your allies are rallied and take +1 forward",
                     "Your enemies feel fear and act accordingly (avoiding you, hiding, attacking with fear-driven abandon)"
