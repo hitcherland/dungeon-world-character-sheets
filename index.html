@@ -10,13 +10,19 @@
             }
 
             body {
-                page: "The Barbarian";
                 font-family: 'Averia Libre', cursive;
-                height: 100%;
                 margin: 0px;
             }
 
-            .background {
+            .page {
+                page: "The Barbarian";
+                font-family: 'Averia Libre', cursive;
+                height: 29.7cm;
+				width: 21cm;
+                margin: 0px;
+            }
+
+            #background {
                 position: absolute;
                 height: 50%;
                 background-image: url( "images/background.png" );
@@ -27,22 +33,23 @@
                 filter: invert(100%);
             }
 
-            .classname { 
+            #classname { 
                 font-family: 'Metamorphous', cursive; 
+				transform: rotate( -90deg );
             }
         
-            .name, .level, .XP {
+            #name, #level, #XP {
                 display: inline-block;
                 background: white;
                 margin: 4px;
                 padding: 5px;
             }
 
-            .name { min-width: 50% }
-            .name::before { content: "NAME: " }
+            #name { min-width: 50% }
+            #name::before { content: "NAME: " }
 
-            .level::before { content: "LEVEL: " }
-            .XP::before { content: "XP: " }
+            #level::before { content: "LEVEL: " }
+            #XP::before { content: "XP: " }
 
             .header {
                 background: black;
@@ -50,37 +57,115 @@
                 padding: 5px;
             }
         
-            .look.keys {
-               text-transform: capitalize;
+            .keys {
+               	text-transform: capitalize;
+				padding: 2px;
+				margin: 0px;
+				font-weight: bold;
+				margin-right: 10px;
             }
+
+			#look input {
+				width: 60%;
+				border: 0px;
+				padding: 1px;
+			}
+			
+			#bonds input {
+			}
         </style>
     </head>
     <body>
-        <div class="background"></div>
-        <div class="classname">The Barbarian</div>
-        <div class="name"></div>
-        <div class="level"></div>
-        <div class="xp"></div>
-        <div class="look">
-            <div class="header">LOOK</div>
-            <span>Choose one for each or write your own:</span>
-        </div>
+        <div id="classname">The Barbarian</div>
+		<div class="page">
+			<div id="background"></div>
+			<div id="name"></div>
+			<div id="level"></div>
+			<div id="xp"></div>
+
+			<div id="look">
+				<div class="header">LOOK</div>
+				<span>Choose one for each or write your own:</span>
+			</div>
+
+			<div id="armor"></div>
+
+			<div id="hit_points">
+				<div id="hp_current"></div>
+				<div id="hp_max"></div>
+			</div>
+
+			<div id="damage"></div>
+
+			<div id="alignment">
+				<div class="header">ALIGNMENT</div>
+			</div>
+
+			<div id='stats'>
+				<div>Strength<input type=text></div>
+				<div>Dexterity<input type=text></div>
+				<div>Constitution<input type=text></div>
+				<div>Intelligence<input type=text></div>
+				<div>Wisdom<input type=text></div>
+				<div>Charisma<input type=text></div>
+			</div>
+
+			<div id='bonds'>
+				<div class="header">BONDS</div>
+			</div>
+			
+			<div id='moves'>
+				<div class="header">STARTING MOVES</div>
+			</div>
+		<div>
         <script>
             var json = undefined;
             $.getJSON( 'charactersheets/barbarian.json', function( data ) {
                 json = data; 
-                $( '.name' ).text( data[ "name" ] );
-                $( '.level' ).text( data[ "level" ] );
-                $( '.xp' ).text( data[ "xp" ] );
+                $( '#name' ).text( data[ "name" ] );
+                $( '#level' ).text( data[ "level" ] );
+                $( '#xp' ).text( data[ "xp" ] );
+
                 var looks = data.class.look;
-                var lookElement = $( '.look' );
+                var lookElement = $( '#look' );
                 var keys = Object.keys( looks );
+
                 for( var index in  keys ) {
                     var key = keys[ index ];
                     var look = looks[ key ];
-                    console.log( key );
-                    lookElement.append( '<div class="look keys">' + key + ':<input type="text"></div>' )
-                }
+					var look_str = look.join( ", " );
+                    lookElement.append( '<div class="keys">' + key + ':<input class="input" type="text" placeholder="' + look_str + '"></div>' )
+                };
+
+				var alignments = data.class.alignment;
+				var alignment_keys = Object.keys( alignments );
+				var alignmentElement = $( '#alignment' );
+				for( var index in alignment_keys ) {
+					var key = alignment_keys[ index ];
+					var desc = alignments[ key ];
+					alignmentElement.append( '<div><span class="keys">' + key + '</span><span>' + desc + '</span></div>' ); 
+				}
+
+				var bonds = data.class.bonds;
+				var bondElement = $( '#bonds' );
+				for( var index in bonds ) {
+					var bond = bonds[ index ];
+					bondElement.append( '<div>' + bond.replace( '____', '<input type=text>' ) + '</div>' );
+				}
+				bondElement.append( '<div><input type=text></div>' );
+
+				var moves = data.class.moves;
+				var move_keys = Object.keys( moves );
+				var movesElement = $( '#moves' );
+				var reg = /\*([^*]*)\*/;
+				for( var index in move_keys ) {
+					var key = move_keys[ index ];
+					var move_ = moves[ key ];
+					var default_ = move_.default;
+					if( move_[ 'level requirement' ] === undefined ) {
+						movesElement.append( '<div><div class="keys"><input type="checkbox" ' + ( default_ !== undefined ? 'disabled checked' : '' ) + '>' + key + '</div><div>' + move_.description.replace( reg, function( match, x ) { return "<b>"+x+"</b>" } ) + '</div></div>' );
+					}
+				}
             } );
         </script>
     </body>
