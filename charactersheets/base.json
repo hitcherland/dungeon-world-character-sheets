@@ -1,0 +1,37 @@
+{
+    "name": "",
+    "level": 1,
+    "xp": 0,
+    "look": {},
+    "armor": 0,
+    "hit points": [ 0, 0 ],
+    "damage": "d0",
+    "alignment": {},
+    "stats": {
+        "strength": [],
+        "dexterity": [],
+        "constitution": [],
+        "intelligence": [],
+        "wisdom": [],
+        "charisma": []
+    },
+    "bonds": [],
+    "moves": {},
+    "race": {},
+    "coin": 0,
+    "load": [],
+    "gear": {},
+    "class": {
+        "title": "",
+        "names": {},
+        "look": {},
+        "alignment": {},
+        "bonds": [],
+        "starting moves": {},
+        "races": {},
+        "load modifier": 0,
+        "starting gear": {},
+        "advanced moves": {}
+    }
+}
+}

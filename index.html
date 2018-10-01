@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Averia+Libre|Metamorphous" rel="stylesheet"> 
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <style>
+            body {
+                font-family: 'Averia Libre', cursive;
+            }
+            .classname { 
+                font-family: 'Metamorphous', cursive; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="classname">The Barbarian</div>
+        <div class="name">Name</div>
+        <div class="level">Level</div>
+        <div class="xp">XP</div>
+        <script>
+            $.getJSON( 'charactersheets/barbarian.json', function( data ) {
+                console.log( data );
+            } );
+        </script>
+    </body>
+</html>
