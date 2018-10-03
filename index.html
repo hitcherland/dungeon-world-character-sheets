@@ -28,6 +28,8 @@
 				<img src="images/dw_heart.svg">
 				<div id="hp_current"></div>
 				<div id="hp_max"></div>
+                <div id="hp_max_hint"></div>
+                <div id="hp_current_hint">Current</div>
 			</div>
 
 			<div id="damage_container">
@@ -68,6 +70,7 @@
                 $( '#armor' ).text( data[ 'armor' ] );
                 $( '#damage' ).text( data[ 'damage' ] );
                 $( '#hp_current' ).text( data[ 'hit points' ][ 0 ] || 0 );
+                $( '#hp_max_hint' ).text( data.class[ 'hp modifier' ] );
                 $( '#hp_max' ).text( data[ 'hit points' ][ 1 ] || 0 );
 
                 var looks = data.class.look;

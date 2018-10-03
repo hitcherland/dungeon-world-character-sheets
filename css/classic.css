@@ -208,3 +208,26 @@ body {
         -1px 1px 0 white,
         1px 1px 0 white;  
 }
+
+#hp_current_hint {
+    position: absolute;
+    left: 4.5cm;
+    font-size: 0.21cm;
+    color: #888;
+}
+
+#hp_max_hint::before {
+    content: "Max (" 
+}
+
+#hp_max_hint::after {
+    content: " + Constitution)" 
+}
+
+#hp_max_hint {
+    position: absolute;
+    text-align:right;
+    right: 2.1cm;
+    font-size: 0.21cm;
+    color: #888;
+}
