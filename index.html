@@ -12,6 +12,8 @@
             body {
                 font-family: 'Averia Libre', cursive;
                 margin: 0px;
+				-webkit-print-color-adjust: exact !important;
+				background-color: #444;
             }
 
             .page {
@@ -19,7 +21,10 @@
                 font-family: 'Averia Libre', cursive;
                 height: 29.7cm;
 				width: 21cm;
-                margin: 0px;
+                margin: 1cm auto 1cm auto;
+				background-color:white;
+				z-index: -11;
+				box-shadow: #333 0.5cm 0.5cm;
             }
 
             #background {
@@ -53,6 +58,7 @@
 				left: 3.28cm;
 				height: 0.79cm;
 				width: 11.51cm;
+				line-height: 0.79cm;
 			}
         
             #name, #level, #XP {
@@ -62,7 +68,10 @@
                 padding: 5px;
             }
 
-            #name::before { content: "NAME " }
+            #name::before { 
+				padding-left: 0.2cm;
+				content: "NAME " 
+			}
 
             #level::before { content: "LEVEL: " }
             #XP::before { content: "XP: " }
@@ -116,6 +125,8 @@
 				width: 5.61cm;
 				height: 0.58cm;
 				font-size: 0.25cm;
+				line-height: 0.58cm;
+				padding-left: 0.2cm
 			}
 
 			#armor_block {
@@ -193,7 +204,7 @@
     <body>
 		<div class="page">
 			<div id="classname">The Barbarian</div>
-			<div id="background"></div>
+			<img id="background" src="images/background.png">
 			<div id="name"></div>
 			<!--<div id="level"></div>
 			<div id="xp"></div> -->
