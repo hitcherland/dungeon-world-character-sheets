@@ -123,25 +123,25 @@ body {
     padding-left: 0.2cm
 }
 
-#armor_block {
+#armor_container {
     left: 9.4cm;
     top: 2.64cm;
 }
 
-#armor_block, #hit_points, #damage {
+#armor_container, #hit_points, #damage_container {
     position: absolute;
     width: 5.59cm;
     height: 0.76cm;
 }
 
-#armor_block .header, #hit_points .header, #damage .header {
+#armor_container .header, #hit_points .header, #damage_container .header {
     height: 100%;
     font-size: 0.28cm;
     line-height: 0.76cm;
     padding-left: 0.25cm;
 }
 
-#armor_block img {
+#armor_container img {
     position: absolute;	
     left:3.45cm;
     top: -0.31cm;
@@ -150,8 +150,10 @@ body {
 #armor {
     position: absolute;	
     text-align: middle;
-    left: 3.87cm;
-    top: 0cm;
+    left: 3.44cm;
+    top: 0.05cm;
+    text-align: center;
+    width: 1.2cm;
 }
 
 #hit_points img {
@@ -177,7 +179,7 @@ body {
 }
 
 
-#damage img {
+#damage_container img {
     position: absolute;	
     left:3.35cm;
     top: -0.21cm;
@@ -188,8 +190,21 @@ body {
     top: 4.11cm;
 }
 
-#damage {
+#damage_container {
     left: 9.4cm;
     top: 5.69cm;
 }
 
+#damage {
+    text-transform: uppercase;
+    position: absolute;
+    left: 3.4cm;
+    text-align:center;
+    width: 1.2cm; 
+    top: 0.05cm;
+    text-shadow:
+        -1px -1px 0 white,
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;  
+}

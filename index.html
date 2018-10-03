@@ -17,7 +17,7 @@
 				<div class="header">LOOK</div>
 				<span class="hint" >Choose one for each or write your own:</span>
 			</div>
-			<div id="armor_block">
+			<div id="armor_container">
 				<div class="header">ARMOR</div>
 				<img src="images/dw_armor.svg">
 				<div id="armor"></div>
@@ -30,9 +30,10 @@
 				<div id="hp_max"></div>
 			</div>
 
-			<div id="damage">
+			<div id="damage_container">
 				<div class="header">DAMAGE</div>
 				<img src="images/dw_dice.svg">
+                <div id="damage"></div>
 			</div>
 			<!--
 
@@ -65,6 +66,7 @@
                 $( '#level' ).text( data[ 'level' ] );
                 $( '#xp' ).text( data[ 'xp' ] );
                 $( '#armor' ).text( data[ 'armor' ] );
+                $( '#damage' ).text( data[ 'damage' ] );
                 $( '#hp_current' ).text( data[ 'hit points' ][ 0 ] || 0 );
                 $( '#hp_max' ).text( data[ 'hit points' ][ 1 ] || 0 );
 
