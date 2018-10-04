@@ -16,218 +16,36 @@ body {
     height: 29.7cm;
     width: 21cm;
     margin: 1cm auto 1cm auto;
-    background-color:white;
     z-index: -11;
     box-shadow: #333 0.5cm 0.5cm;
 }
 
-#background {
-    position: absolute;
-    height: 35%;
-    background-image: url( "images/background.png" );
-    background-size: 100% 100%;
-    opacity: 0.15;
-    width: 100%;
-    z-index: -10;
-    filter: invert(100%);
+.input {
+	cursor: text;
+	pointer-events: all;
+	fill: #777;
 }
 
-#classname { 
-    font-family: 'Metamorphous', cursive; 
-    writing-mode: sideways-lr;
-    text-orientation: sideways-right;
-    position: absolute;
-    height: 29.7cm;
-    width: 3cm;
-    bottom: 0cm;
-    left: 0cm;
-    padding-bottom: 8.18cm;
-    font-size: 1.5cm;
-    text-transform: uppercase;
- }
-
-#name {
-    position: absolute;
-    top: 0.56cm;
-    left: 3.28cm;
-    height: 0.79cm;
-    width: 11.51cm;
-    line-height: 0.79cm;
+.input.checkbox {
+	cursor: pointer;
+	visibility: hidden;
 }
 
-#name, #level, #XP {
-    display: inline-block;
-    background: white;
-    margin: 4px;
-    padding: 5px;
+svg {
+	display: block;
+    position: relative;
+	width: 765px;
+	height: 990px;
+    margin: 1cm auto 1cm auto;
+    background-color:white;
+	#pointer-events: all;
+	pointer-events: none;
+    box-shadow: #333 0.5cm 0.5cm;
+	cursor: default;
 }
 
-#name::before { 
-    padding-left: 0.2cm;
-    content: "NAME " 
-}
-
-#level::before { content: "LEVEL: " }
-#XP::before { content: "XP: " }
-
-.header {
-    background: black;
-    color: white;
-    font-size: 0.28cm;
-    text-transform: uppercase;
-}
-
-.keys {
-    text-transform: capitalize;
-    padding: 2px;
-    margin: 0px;
-    font-weight: bold;
-    margin-right: 10px;
-}
-
-#look {
-    position: absolute;
-    top: 2.64cm;
-    left: 3.33cm;
-    width: 5.61cm;
-    height: 4.34cm;
-}
-
-.hint {
-    font-style: italic;
-    color: #888;
-}
-
-#look * {
-    font-size: 0.23cm;
-}
-
-#look .keys {
-    color:black;
-    text-transform: uppercase;
-}
-
-#look input {
-    border: 0px;
-    border-bottom: 1px solid #888;
-    padding: 1px;
-    background: none;
-    margin-left: 0.2cm
-}
-
-#look .header {
-    width: 5.61cm;
-    height: 0.58cm;
-    font-size: 0.25cm;
-    line-height: 0.58cm;
-    padding-left: 0.2cm
-}
-
-#armor_container {
-    left: 9.4cm;
-    top: 2.64cm;
-}
-
-#armor_container, #hit_points, #damage_container {
-    position: absolute;
-    width: 5.59cm;
-    height: 0.76cm;
-}
-
-#armor_container .header, #hit_points .header, #damage_container .header {
-    height: 100%;
-    font-size: 0.28cm;
-    line-height: 0.76cm;
-    padding-left: 0.25cm;
-}
-
-#armor_container img {
-    position: absolute;	
-    left:3.45cm;
-    top: -0.31cm;
-}
-
-#armor {
-    position: absolute;	
-    text-align: middle;
-    left: 3.44cm;
-    top: 0.05cm;
-    text-align: center;
-    width: 1.2cm;
-}
-
-#hit_points img {
-    position: absolute;	
-    left:3.30cm;
-    top: -0.31cm;
-}
-
-#hp_max {
-    position: absolute;	
-    top: 0.1cm;
-    left: 4.1cm;
-    font-size: 80%;
-    text-align: right;
-}
-
-#hp_current {
-    position: absolute;	
-    top: 0.1cm;
-    right: 1.62cm;
-    font-size: 80%;
-    text-align: left;
-}
-
-
-#damage_container img {
-    position: absolute;	
-    left:3.35cm;
-    top: -0.21cm;
-}
-
-#hit_points {
-    left: 9.4cm;
-    top: 4.11cm;
-}
-
-#damage_container {
-    left: 9.4cm;
-    top: 5.69cm;
-}
-
-#damage {
-    text-transform: uppercase;
-    position: absolute;
-    left: 3.4cm;
-    text-align:center;
-    width: 1.2cm; 
-    top: 0.05cm;
-    text-shadow:
-        -1px -1px 0 white,
-        1px -1px 0 white,
-        -1px 1px 0 white,
-        1px 1px 0 white;  
-}
-
-#hp_current_hint {
-    position: absolute;
-    left: 4.5cm;
-    font-size: 0.21cm;
-    color: #888;
-}
-
-#hp_max_hint::before {
-    content: "Max (" 
-}
-
-#hp_max_hint::after {
-    content: " + Constitution)" 
-}
-
-#hp_max_hint {
-    position: absolute;
-    text-align:right;
-    right: 2.1cm;
-    font-size: 0.21cm;
-    color: #888;
+.hidden {
+	position: absolute;
+	left: -9999px;
+	top: 0px;
 }
