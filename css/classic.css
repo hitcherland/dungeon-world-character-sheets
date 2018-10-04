@@ -1,23 +1,43 @@
-@page {
-    size: 21cm 29.7cm;
-    margin: 27mm 16mm 27mm 16mm
+@media print {
+	@page {
+		size: A4;
+		margin: 0cm 0cm 0cm 0cm;
+		page-break-after: always;
+	}
+
+	html, body {
+		margin: 0cm 0cm;
+		overflow: hidden;
+	}
+
+	svg {
+		margin: 0cm 0cm 0cm 0cm;
+		width: 100%;
+		height: 100%;
+		page-break-after: always;
+	}
+
+	.hidden, .temporary {
+		display: none;
+	}
 }
 
-body {
-    font-family: 'Averia Libre', cursive;
-    margin: 0px;
-    -webkit-print-color-adjust: exact !important;
-    background-color: #444;
-}
+@media screen {
+	body {
+		margin: 0px;
+		font-family: 'Averia Libre', cursive;
+		background-color: #444;
+	}
 
-.page {
-    position: relative;
-    font-family: 'Averia Libre', cursive;
-    height: 29.7cm;
-    width: 21cm;
-    margin: 1cm auto 1cm auto;
-    z-index: -11;
-    box-shadow: #333 0.5cm 0.5cm;
+	svg {
+		margin: 1cm auto 1cm auto;
+		width: 21cm;
+		height: 29.7cm;
+		background-color:white;
+		pointer-events: none;
+		cursor: default;
+		box-shadow: #333 0.5cm 0.5cm;
+	}
 }
 
 .input {
@@ -34,14 +54,6 @@ body {
 svg {
 	display: block;
     position: relative;
-	width: 765px;
-	height: 990px;
-    margin: 1cm auto 1cm auto;
-    background-color:white;
-	#pointer-events: all;
-	pointer-events: none;
-    box-shadow: #333 0.5cm 0.5cm;
-	cursor: default;
 }
 
 .hidden {
