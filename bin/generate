@@ -1,0 +1,41 @@
+#!/usr/bin/bash
+
+basepath=$(dirname $0 );
+json="$basepath/../charactersheets/sheets.json"
+
+declare -A classes
+
+classes=(
+	[barbarian]="6 7"
+	[bard]="8 9"
+	[cleric]="10 11 12 13"
+	[druid]="14 15"
+	[fighter]="16 17"
+	[immolator]="18 19"
+	[paladin]="20 21"
+	[ranger]="22 23"
+	[thief]="24 25"
+	[wizard]="26 27 28 29"
+)
+
+echo -n "{" > $json
+for class in "${!classes[@]}"; do
+	i=1
+	echo -n "\"$class\": [" >> $json
+	for page in ${classes[$class]}; do
+		echo "${class} page ${i}"
+		echo -n "\"images/${class}_${i}.svg\"," >> $json
+		output="$basepath/../images/${class}_${i}.svg"
+		pdftocairo -r 96 -f $page -l $page -svg $basepath/../Dungeon_World_Play_Sheets.pdf $output 
+		$basepath/viewboxify.py $output
+		cat <( echo '<?xml-stylesheet type="text/css" href="../css/svg.css" ?>' ) $output > $output.tmp
+		mv $output.tmp $output
+		svgo -i $output -o $basepath/../images_min/${class}_${i}.svg &
+		((i+=1))
+	done
+	echo -n "\"\"]," >> $json
+done
+echo "\"end\":\"\"}" >> $json
+
+wait
+#svgo images/*.svg

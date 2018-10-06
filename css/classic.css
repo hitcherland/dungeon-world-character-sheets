@@ -1,3 +1,28 @@
+/* latin */
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Averia Libre Regular'), local('AveriaLibre-Regular'), url(../fonts/Averia_Libre/AveriaLibre-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Metamorphous';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Metamorphous'), url(../fonts/Metamorphous/Metamorphous-Regular.ttf);
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Metamorphous';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Metamorphous'), url(../fonts/Metamorphous/Metamorphous-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @media print {
 	@page {
 		size: A4;
@@ -10,7 +35,7 @@
 		overflow: hidden;
 	}
 
-	svg {
+	object {
 		margin: 0cm 0cm 0cm 0cm;
 		width: 100%;
 		height: 100%;
@@ -20,6 +45,15 @@
 	.hidden, .temporary {
 		display: none;
 	}
+
+	input[type=number]::-webkit-inner-spin-button, 
+	input[type=number]::-webkit-outer-spin-button { 
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		margin: 0; 
+	}
+
 }
 
 @media screen {
@@ -29,7 +63,7 @@
 		background-color: #444;
 	}
 
-	svg {
+	object {
 		margin: 1cm auto 1cm auto;
 		width: 21cm;
 		height: 29.7cm;
@@ -37,35 +71,9 @@
 		cursor: default;
 		box-shadow: #333 0.5cm 0.5cm;
 	}
-	
-	svg * {
-		pointer-events: none;
-	}
-	
-	svg .text, svg .text * {
-		pointer-events: all;
-		cursor: text;
-	}
 }
 
-.input {
-	cursor: text;
-	pointer-events: all;
-	fill: #777;
-}
-
-.input.checkbox {
-	cursor: pointer;
-	visibility: hidden;
-}
-
-svg {
+object {
 	display: block;
     position: relative;
-}
-
-.hidden {
-	position: absolute;
-	left: -9999px;
-	top: 0px;
 }

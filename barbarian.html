@@ -1,44 +1,15 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href="https://fonts.googleapis.com/css?family=Averia+Libre|Metamorphous" rel="stylesheet"> 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-		<script type="text/javascript" src="pdfkit.js"></script>
-		<script type="text/javascript" src="blob-stream.js"></script>
-		<script type="text/javascript" src="svg-pdfkit.js"></script>
+		<script type="text/javascript" src="js/pdfkit.js"></script>
+		<script type="text/javascript" src="js/blob-stream.js"></script>
+		<script type="text/javascript" src="js/svg-pdfkit.js"></script>
+		<script type="text/javascript" src="js/dw.js"></script>
         <link rel="stylesheet" type="text/css" href="css/classic.css">
     </head>
     <body>
-		<a id="save_pdf">save</a>
-		<div contentEditable="true" id="page_1"></div>
-		<script>
-			function save() {
-				var doc = new PDFDocument();
-				var stream = doc.pipe(blobStream());
-				SVGtoPDF(doc, $( '#page_1 svg' )[ 0 ].outerHTML , 0, 0, {
-					fontCallback: function( family, bold, italic, fontOptions ) {
-						return "https://fonts.googleapis.com/css?family=Averia+Libre|Metamorphous";
-						if( family.match( /(?:^|,)\s*Averia Libre\s*$/) ) {
-							return 'Averia Libre';
-						} else if( family.match( /(?:^|,)\s*Metamorphous\s*$/) ) {
-							return 'Metamorphous'
-						}
-					}
-				});
-				doc.end();
-				stream.on('finish', function() {
-					$( '#save_pdf' ).attr( 'href', stream.toBlobURL('application/pdf') );
-					$( '#save_pdf' ).attr( 'download', "barbarian.pdf" );
-				});
-			}
-
-			$( '#page_1' ).load( 'images/barbarian_1.svg' );
-
-            $.getJSON( 'charactersheets/barbarian.json', function( data ) {
-				$( '#name tspan' ).text( data.name );
-				$( '#name' ).attr( 'contentEditable', 'true' );
-				$( '#name *' ).attr( 'contentEditable', 'true' );
-			} );
-		</script>
+		<object type="image/svg+xml" data="images/barbarian_1.svg"></object>
+		<object type="image/svg+xml" data="images/barbarian_2.svg"></object>
 	</body>
 </html>
