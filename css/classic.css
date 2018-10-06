@@ -34,9 +34,17 @@
 		width: 21cm;
 		height: 29.7cm;
 		background-color:white;
-		pointer-events: none;
 		cursor: default;
 		box-shadow: #333 0.5cm 0.5cm;
+	}
+	
+	svg * {
+		pointer-events: none;
+	}
+	
+	svg .text, svg .text * {
+		pointer-events: all;
+		cursor: text;
 	}
 }
 

@@ -10458,25 +10458,35 @@
 				 id="tspan11085">NAME</tspan><tspan class="input" id="name" x="40"></tspan></text>
 			</g>
 		</svg>
-		<input class="hidden" type="text" id="name_"/>
-		<input class="hidden" type="text" id="level_"/>
-		<input class="hidden" type="text" id="xp_"/>
         <script>
             var json = undefined;
 			function makeInput( element, value ) {
 				var id = element.attr( 'id' );
+				var pseudo = $( '<input class="hidden" type="text" id="' + id + '_"/>' );
+				pseudo.appendTo( document.body );
 				element.text( value );
-				var pseudo = $( "#" + id + "_" );
 				pseudo.val( value );
 
-				pseudo.keyup( function() {
-					element.text( $( this ).val() );
-					json[ id ] = $( this ).val();
+				pseudo.keyup( function( ev ) {
+					var cursor = ev.target.selectionStart;
+					console.log( cursor, $( this ).val() );
+					var val = $( this ).val().replace( /\|/g, '' );
+					element.text( val );
+					json[ id ] = val ;
+					$( this ).val( val.slice( 0, cursor ) + "|" + val.slice( cursor ) ); 
+				} ).focus( function( ev ) {
+					var cursor = ev.target.selectionStart;
+					var val = $( this ).val();
+					$( this ).val( val.slice( 0, cursor ) + "|" + val.slice( cursor ) ); 
+				} ).focusout( function( ev ) {
+					var val = $( this ).val().replace( /\|/g, '' );
+					$( this ).val( val.replace( /|/g, '' ) );
 				} );
 
 				element.click( function() {
 					pseudo.focus();
 				} );
+
 
 				return element;
 			}
@@ -10491,7 +10501,7 @@
 
             $.getJSON( 'charactersheets/barbarian.json', function( data ) {
                 json = data; 
-				var variables = [ 'name', 'level', 'xp' ];
+				var variables = [ 'name', 'level', 'xp', 'armor' ];
 				for( var i = 0; i < variables.length; i++ ) {
 					makeInput( $( '#' + variables[ i ] ), data[ variables[ i ] ] );
 				}
