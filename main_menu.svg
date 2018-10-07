@@ -89,55 +89,7 @@ a:visited {
            id="g11069"><path
              d="M 0,0 C 2.115,0.424 5.455,-0.351 7.967,0.274 7.025,-0.454 5.686,-0.599 5.494,-1.923 4.781,-6.84 6.131,-10.957 3.572,-14.285 c -2.086,-2.711 -4.427,-2.767 -8.515,-4.67 -0.672,-0.611 -1.323,-1.243 -1.375,-2.473 -0.44,0.842 -0.91,1.654 -1.373,2.473 -6.051,1.732 -11.108,4.46 -10.713,12.637 1.277,-0.088 1.832,0.547 3.021,0.548 -0.021,-5.789 2.401,-9.136 7.416,-9.888 0.649,-0.91 0.858,-2.258 1.375,-3.297 1.055,0.409 0.694,2.235 1.373,3.021 6.582,0.658 8.897,7.03 7.418,14.835 C 1.875,-0.324 0.836,-0.264 0,0"
              id="path11071"
-             style="fill:#231f20;fill-opacity:1;fill-rule:evenodd;stroke:none" /></g></g></g><text
-       x="261.9014"
-       y="-336.75214"
-       transform="scale(1,-1)"
-       id="classes"><tspan
-         x="261.9014 269.2334 275.2934 280.12939 286.63339 292.69339 297.52939 300.7814 306.8414"
-         y="-322.74814"
-         id="tspan11077"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="barbarian">Barbarian</a></tspan><tspan
-         x="261.9014 269.2334 275.2934 280.08859"
-         y="-308.74414"
-         id="tspan11079"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="bard">Bard</a></tspan><tspan
-         x="261.9014 269.2934 272.66541 278.59341 283.42941 286.6814"
-         y="-294.74014"
-         id="tspan11081"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="cleric">Cleric</a></tspan><tspan
-         x="261.9014 269.97501 274.811 281.45901 284.711"
-         y="-280.73615"
-         id="tspan11083"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="druid">Druid</a></tspan><tspan
-         x="261.9014 268.35861 271.6106 278.1026 284.76501 289.17139 295.0994"
-         y="-266.73215"
-         id="tspan11085"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="fighter">Fighter</a></tspan><tspan
-         x="261.9014 265.80139 275.54541 285.2894 291.58939 294.98779 301.0238 305.4278 311.75659"
-         y="-252.72815"
-         id="tspan11087"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="immolator">Immolator</a></tspan><tspan
-         x="261.9014 268.72821 274.78821 278.1842 284.2442 290.83221 294.0842"
-         y="-238.72415"
-         id="tspan11089"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="paladin">Paladin</a></tspan><tspan
-         x="261.9014 269.3894 275.4494 282.15741 288.62659 294.5546"
-         y="-224.72015"
-         id="tspan11091"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="ranger">Ranger</a></tspan><tspan
-         x="261.9014 268.73901 275.423 278.67499 284.603"
-         y="-210.71614"
-         id="tspan11093"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="thief">Thief</a></tspan><tspan
-         x="261.9014 272.75299 276.005 281.7002 287.76019 292.55179"
-         y="-196.71216"
-         id="tspan11095"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light"><a href="wizard">Wizard</a></tspan><tspan
-         x="261.9014"
-         y="-0"
-         id="tspan11125"
-         style="font-size:12px;font-variant:normal;font-weight:300;font-stretch:normal;writing-mode:lr-tb;fill:#656263;fill-opacity:1;fill-rule:nonzero;stroke:none;font-family:Averia Libre;-inkscape-font-specification:AveriaLibre-Light" /></text>
+             style="fill:#231f20;fill-opacity:1;fill-rule:evenodd;stroke:none" /></g></g></g>
 <text
        transform="matrix(1,0,0,-1,144.87,446.694)"
        id="text11127"><tspan

@@ -56,14 +56,18 @@
 		background-color: #444;
 	}
 
-	object {
+	object, .page {
+        position: relative;
 		margin: 1cm auto 1cm auto;
 		width: 21cm;
 		height: 29.7cm;
+	}
+
+    object {
+		box-shadow: #333 0.5cm 0.5cm;
 		background-color:white;
 		cursor: default;
-		box-shadow: #333 0.5cm 0.5cm;
-	}
+    }
 }
 
 object {
@@ -84,9 +88,8 @@ a:hover {
 
 
 #playbooks {
-    position: relative;
-    width: 8.7em;
-    margin: auto;
-    bottom: 588px;
-    line-height: 13.15pt;
+    position: absolute;
+    top: 488pt;
+    line-height: 14.8pt;
+    left: 255pt;
 }
