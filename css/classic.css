@@ -18,7 +18,6 @@
 
 @media print {
 	@page {
-		size: A4;
 		margin: 0cm 0cm 0cm 0cm;
 		page-break-after: always;
 	}

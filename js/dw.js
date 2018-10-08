@@ -68,3 +68,31 @@ function loadSheet( name ) {
 		};
 	} );
 }
+
+function activateCheckboxes() {
+    var count=0
+    function test() {
+        var objects = $( 'object' );
+        var pass=false;
+        if( objects.length > 0 )
+            pass = true;
+        for( var i=0; i < objects.length; i++ ) {
+            var object = objects[ i ];
+            var elements = $( 'desc:contains("checkbox")', object.contentDocument ).parent().off().click( function() { 
+                var o=$(this).css( 'opacity' ); 
+                $(this).css( 'opacity', 1 - o ); 
+            });
+            if( elements.length == 0 ) {
+                console.log( "failed on:", object );
+                pass = false;
+            }
+        }
+        if(!pass && count < 10) {
+            count++;
+            setTimeout( test, 1000 );
+        }
+    }
+    test();
+}
+
+activateCheckboxes();

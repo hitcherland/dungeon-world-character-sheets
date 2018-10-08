@@ -1,3 +1,4 @@
+@namespace svg 'http://www.w3.org/2000/svg';
 @font-face {
   font-family: 'Averia Libre';
   font-style: normal;
@@ -42,7 +43,7 @@ input#armor {
     font-size:150%;
 }
 
-input#level, input#armor {
+input#level, input#armor, input.attr {
 	text-align:center;
 }
 
@@ -50,6 +51,10 @@ input#hp_current {
     text-align:left;
 }
 
-input#hp_max {
+input#hp_max, input.attribute {
     text-align:right;
+}
+
+*:[checkbox] {
+    cursor: pointer;
 }
