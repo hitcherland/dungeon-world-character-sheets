@@ -78,7 +78,7 @@ function activateCheckboxes() {
             pass = true;
         for( var i=0; i < objects.length; i++ ) {
             var object = objects[ i ];
-            var elements = $( 'desc:contains("checkbox")', object.contentDocument ).parent().off().click( function() { 
+            var elements = $( 'desc:contains("checkbox")', object.contentDocument ).parent().off().bind( 'touchstart mousedown', function() { 
                 var o=$(this).css( 'opacity' ); 
                 $(this).css( 'opacity', 1 - o ); 
             });
