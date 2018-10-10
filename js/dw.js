@@ -7,7 +7,7 @@ function getSheetsData() {
 	} );
 }
 
-function save() {
+function saveSVG() {
 	function fontCallback( family, bold, italic, fontOptions ) {
 		if( family.match( /Averia Libre/) ) {
 			return 'Averia Libre';
@@ -76,23 +76,69 @@ function activateCheckboxes() {
         var pass=false;
         if( objects.length > 0 )
             pass = true;
-        for( var i=0; i < objects.length; i++ ) {
-            var object = objects[ i ];
-            var elements = $( 'desc:contains("checkbox")', object.contentDocument ).parent().off().bind( 'touchstart mousedown', function() { 
+
+        objects.each( function () {
+            if( !pass )
+                return;
+
+            var elements = $( 'desc:contains("checkbox")', this.contentDocument ).parent().off().bind( 'touchstart mousedown', function() { 
                 var o=$(this).css( 'opacity' ); 
                 $(this).css( 'opacity', 1 - o ); 
             });
+
             if( elements.length == 0 ) {
-                console.log( "failed on:", object );
+                console.log( "failed on:", this );
                 pass = false;
             }
-        }
+        });
+
         if(!pass && count < 10) {
             count++;
             setTimeout( test, 1000 );
+        } else {
+            console.debug( "done" );
         }
     }
     test();
+}
+
+function readCheckboxes() {
+    var output = {};
+    $( 'object' ).each( function() {
+        var object_output = {}
+        var elements = $( 'desc:contains("checkbox")', this.contentDocument ).each( function() {
+            var o=$( this ).parent().css( 'opacity' ); 
+            object_output[ this.id ] = o; 
+        });
+        output[ this.data ] = object_output;
+    } );
+    return output;
+}
+
+function loadCheckboxes( json ) {
+    $( 'object' ).each( function() {
+        var data = json[ this.data ];
+        var ids = Object.keys( data );
+        for( var i = 0; i < ids.length; i++ ) {
+            var opacity = data[ ids[ i ] ];
+            var debug = $( 'desc#' + ids[ i ], this.contentDocument )
+            debug.parent().css( 'opacity', opacity );
+        }
+    } );
+}
+
+function saveURL() {
+    var json = {
+        'checkboxes': readCheckboxes(),
+    };
+
+    var packed = JSONC.pack( json );
+    return packed;
+}
+
+function loadURL( url ) {
+    var json = JSONC.unpack( url );
+    loadCheckboxes( json[ 'checkboxes' ] );
 }
 
 activateCheckboxes();
