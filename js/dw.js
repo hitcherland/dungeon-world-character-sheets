@@ -127,9 +127,39 @@ function loadCheckboxes( json ) {
     } );
 }
 
+function readTextInputs() {
+    var output = {};
+    $( 'object' ).each( function() {
+        var object_output = {}
+        $( 'input[type="text"]', this.contentDocument ).each( function() {
+            var value = $( this ).val();
+            object_output[ this.id ] = value;
+        });
+        output[ this.data ] = object_output;
+    });
+    return output;
+}
+
+function loadTextInputs( json ) {
+    console.log( json );
+    $( 'object' ).each( function() {
+        var data = json[ this.data ]
+        var ids = Object.keys( data );
+        $( 'input[type="text"]', this.contentDocument ).each( function() {
+            for( var i = 0; i < ids.length; i++ ) {
+                var value = data[ ids[ i ] ];
+                var debug = $( 'input#' + ids[ i ], this.contentDocument );
+                console.debug( debug, ids[ i ] );
+                debug.val( value );
+            };
+        });
+    });
+}
+
 function saveURL() {
     var json = {
         'checkboxes': readCheckboxes(),
+        'textInputs': readTextInputs(),
     };
 
     var packed = JSONC.pack( json );
@@ -139,6 +169,7 @@ function saveURL() {
 function loadURL( url ) {
     var json = JSONC.unpack( url );
     loadCheckboxes( json[ 'checkboxes' ] );
+    loadTextInputs( json[ 'textInputs' ] );
 }
 
 activateCheckboxes();
