@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Averia Libre Regular'), local('AveriaLibre-Regular'), url(../fonts/Averia_Libre/AveriaLibre-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Metamorphous';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Metamorphous'), url(../fonts/Metamorphous/Metamorphous-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html, body {
+    margin: 0cm 0cm;
+    font-family: 'Averia Libre', cursive;
+    background-color: #444;
+}
+
 .header {
     text-transform: uppercase;
     background-repeat: no-repeat;
@@ -49,6 +72,26 @@ body {
 
 #page > * {
     position: absolute;
+}
+
+#page * {
+    cursor: default;
+    box-sizing: border-box;
+}
+
+#page *[contenteditable], #page input.value {
+    cursor: text;
+    xborder: 0.5pt dotted #656263;
+    xbox-sizing: border-box;
+}
+
+
+#xpage *[contenteditable]:hover, #page input[type="text"]:hover {
+    border: 1pt dotted black;
+}
+
+#page label, #page label * {
+    cursor: pointer;
 }
 
 #class {
@@ -149,6 +192,19 @@ body {
 
 #xp > :last-child {
     padding-left: 0.05in;
+}
+
+#name_hint {
+    left: 1.332in;
+    top: 0.662in;
+    font-style:italic;
+    font-weight:300;
+    font-size:6pt;
+    color:#656263;
+}
+
+#name_hint * > :first-child {
+    padding-right: 1ex;
 }
 
 #look {
@@ -353,6 +409,18 @@ body {
     text-indent:0.067in;
 }
 
+#bonds .hint {
+    font-style: italic;
+}
+
+#bonds *[contenteditable] {
+    font-weight:300;
+    font-size:7pt;
+    color:#656263;
+    padding: 0.05in 0 0.05in 0;
+    min-height:2ex;
+}
+
 #race {
     width: 2.191in;
 }
@@ -364,9 +432,19 @@ body {
 }
 
 #attributes {
-    top: 2.971in;
+    top: 2.791in;
     left: 1.329in;
     width: 4.528in;
+    text-align: center;
+}
+
+#attributes > div.hint {
+    display:block;
+    background-image: none;
+    width: auto;
+    height: auto;
+    margin: auto;
+    text-align:center;
 }
 
 #attributes > div {
@@ -376,7 +454,7 @@ body {
     background-repeat: no-repeat;
     width: 1.426in;
     height:1.169in;
-    margin: 0 0.0290in 0 0.0290in;
+    margin: 0;
 }
 
 #attributes >div:first-child { margin-left: 0; }
@@ -388,23 +466,42 @@ body {
     left: 0.107in;
     font-size:11pt;
     color:#231f20;
+    display: flex;
+    width: 100%;
+}
+
+#attributes > div > :nth-child( 1 ) > span:last-child {
+    text-align: right;
+    flex-grow: 1;
+    margin-right: 0.237in;
+    color:#656263;
 }
 
 #attributes > div > :nth-child( 2 ) {
+    text-transform: uppercase;
     position: absolute;
     top: 0.571in;
     left: 0.283in;
     font-size:11pt;
     color:#231f20;
 }
+#attributes > div > :nth-child( 2 ) > span:last-child {
+    position: absolute;
+    display: block;
+    text-align: center;
+    color:#656263;
+    width:100%;
+    font-size: 15pt;
+}
+
+
 
 #attributes > div > :nth-child( 3 ) {
     position: absolute;
-    top: 0.485in;
+    top: 0.455in;
     right: 0.239in;
     color:white;
     font-size:7pt;
-    cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -414,7 +511,6 @@ body {
 #attributes > div > :nth-child( 3 ) input, .checkable > label > input {
     position: absolute;
     opacity: 0;
-    cursor: pointer;
     height: 0;
     width: 0;
 }
@@ -425,7 +521,7 @@ body {
     width: 0.103in;
     height: 0.104in;
     right: -0.161in;
-    top:-0.017in;
+    top:0.017in;
 }
 
 #attributes > div > :nth-child( 3 ) input:checked + span, .checkable > label > input:checked + span {
