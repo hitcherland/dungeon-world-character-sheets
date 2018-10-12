@@ -1,29 +1,9 @@
-body {
-    text-align: left;
-}
-
-#page {
-    position: relative;
-    width: 8.5in;
-    height: 11in;
-    background: white;
-    background-repeat: no-repeat;
-}
-
-#page {
-    background-image: url('background_1.svg' );
-}
-
-#page > * {
-    position: absolute;
-}
-
 .header {
     text-transform: uppercase;
     background-repeat: no-repeat;
     color: white;
     font-weight:500;
-    font-size:10px;
+    font-size:10pt;
 }
 
 .value {
@@ -43,9 +23,132 @@ body {
 }
 
 .hint {
-    font-size:7px;
+    font-size:7pt;
     color:#656263;
     font-weight:300;
+}
+
+body {
+    text-align: left;
+}
+
+#page {
+    position: relative;
+    width: 8.5in;
+    height: 11in;
+    min-width: 8.5in;
+    min-height: 11in;
+    background: white;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#page {
+    background-image: url('background_1.svg' );
+}
+
+#page > * {
+    position: absolute;
+}
+
+#class {
+    font-family: 'Metamorphous';
+    text-transform: uppercase;
+    font-variant:normal;
+    font-weight:normal;
+    font-stretch:normal;
+    font-size:54pt;
+    writing-mode:sideways-lr;
+    color:#231f20;
+    left:0.317in;
+    top:1.402in;
+    min-height: 5em;
+}
+
+#class:before, #class:after {
+    content: " ";
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+#class:before {
+    width: 0.795in;
+    height: 1.245in;
+    top: -1.415in;
+    left: 0.064in;
+    background-image: url( 'banner_1.svg' );
+}
+
+#class:after {
+    content: " ";
+    width: 0.854in;
+    height: 5.615in;
+    left: 0in;
+    bottom: -0.5in;
+    transform: translate( 0%, 100%);
+    background-image: url( 'banner_2.svg' );
+    background-repeat: no-repeat;
+}
+
+#name, #level, #xp {
+    display: flex;
+}
+
+#name > :first-child, #level > :first-child, #xp > :first-child {
+    font-size:12pt;
+    color:#231f20;
+    text-transform: uppercase;
+    float:left;
+}
+
+
+#name > :last-child, #level > :last-child, #xp > :last-child {
+    flex-grow: 1;
+    color:#656263;
+}
+
+#name {
+    background-image: url( 'name.svg' );
+    background-repeat: no-repeat;
+    left: 1.303in;
+    top: 0.202in;
+    line-height: 0.341in;
+    width: 4.566in;
+    text-indent: 0.083in;
+}
+
+#name > :last-child {
+    padding-left: 0.05in;
+}
+
+#level {
+    left: 6.09in;
+    top: 0.193in;
+    line-height:0.387in;
+}
+
+#level > :last-child {
+    position: absolute;
+    background-image: url( 'level.svg' );
+    background-repeat: no-repeat;
+    width: 0.396in;
+    height: 0.387in;
+    left: 0.520in;
+    text-align: center;
+}
+
+#xp {
+    background-image: url( 'xp.svg' );
+    background-repeat: no-repeat;
+    left: 7.095in;
+    top: 0.228in;
+    line-height:0.33in;
+    width:1.176in;
+    text-indent: 0.085in;
+}
+
+#xp > :last-child {
+    padding-left: 0.05in;
 }
 
 #look {
@@ -72,12 +175,12 @@ body {
 
 #look .key {
     font-weight:bold;
-    font-size:7px;
+    font-size:7pt;
     color:#231f20;
 }
 
 #look .key + span {
-    font-size:7px;
+    font-size:7pt;
     color:#656263;
     margin-left: 0.02in;
 }
@@ -87,7 +190,7 @@ body {
     position: absolute;
     left: 3.707in;
     width: 2.206in;
-    top:1.051in;
+    top:1.052in;
 }
 
 #armor .header {
@@ -195,16 +298,16 @@ body {
     padding: 0.092in 0 0.092in 0;
     top: -0.092in;
     height: 0.472in;
-    border: 0px;
+    border: 0pt;
     line-height: 0.287in;
     resize: none;
     overflow: hidden;
-    text-shadow: -1px -1px white,
-                 -1px +1px white,
-                 +1px +1px white,
-                 +1px -1px white;
+    text-shadow: -1pt -1pt white,
+                 -1pt +1pt white,
+                 +1pt +1pt white,
+                 +1pt -1pt white;
     font-family:'Averia Libre';
-    font-size: 20px;
+    font-size: 20pt;
 }
 
 #damage .value[value="D10"] {
@@ -225,6 +328,41 @@ body {
     height: 0.514in;
 }
 
+.right {
+    left: 6.078in;
+    top: 1.040in;
+}
+
+#alignment {
+    width: 2.196in;
+}
+
+#alignment .header {
+    background-image: url( 'header_5.svg' );
+    line-height:0.243in;
+    text-indent:0.049in;
+}
+
+#bonds {
+    width: 2.213in;
+}
+
+#bonds .header {
+    background-image: url( 'header_6.svg' );
+    line-height:0.295in;
+    text-indent:0.067in;
+}
+
+#race {
+    width: 2.191in;
+}
+
+#race .header {
+    background-image: url( 'header_7.svg' );
+    line-height:0.261in;
+    text-indent:0.059in;
+}
+
 #attributes {
     top: 2.971in;
     left: 1.329in;
@@ -238,7 +376,7 @@ body {
     background-repeat: no-repeat;
     width: 1.426in;
     height:1.169in;
-    margin: 0 0.033in 0 0.033in;
+    margin: 0 0.0290in 0 0.0290in;
 }
 
 #attributes >div:first-child { margin-left: 0; }
@@ -248,7 +386,7 @@ body {
     position: absolute;
     top: 0.141in;
     left: 0.107in;
-    font-size:11px;
+    font-size:11pt;
     color:#231f20;
 }
 
@@ -256,7 +394,7 @@ body {
     position: absolute;
     top: 0.571in;
     left: 0.283in;
-    font-size:11px;
+    font-size:11pt;
     color:#231f20;
 }
 
@@ -265,7 +403,7 @@ body {
     top: 0.485in;
     right: 0.239in;
     color:white;
-    font-size:7px;
+    font-size:7pt;
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -273,7 +411,7 @@ body {
     user-select: none;
 }
 
-#attributes > div > :nth-child( 3 ) input {
+#attributes > div > :nth-child( 3 ) input, .checkable > label > input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -290,6 +428,120 @@ body {
     top:-0.017in;
 }
 
-#attributes > div > :nth-child( 3 ) input:checked + span {
+#attributes > div > :nth-child( 3 ) input:checked + span, .checkable > label > input:checked + span {
     background-image: url( 'checkmark.svg' );
+    background-size: 100%;
+}
+
+#starting_moves {
+    left: 1.332in;
+    top: 5.632in;
+    width: 4.596in;
+    line-height: 0.294in;
+}
+
+#starting_moves .header {
+    background-image: url( 'header_8.svg' );
+    text-indent: 0.064in;
+}
+
+.checkable {
+    padding: 0.05in 0 0.05in 0;
+    min-height: 0.34in;
+    position: relative;
+}
+
+.checkable > label {
+    position: absolute;
+    left: 0px;
+    background-image: url( 'checkbox.svg' );
+    background-size: 100%;
+    background-repeat: no-repeat;;
+    width: 0.198in;
+    height: 0.194in;
+}
+
+.checkable > label > input + span {
+    position: absolute;
+    background-image: none;
+    width: 0.103in;
+    height: 0.104in;
+    left: 0.048in;
+    top: 0.039in;
+}
+
+.checkable > .title {
+    position: relative;
+    left: 0.302in;
+    margin-right: 0.302in;
+    min-width: 0.1in; 
+    min-height: 15pt;
+    font-weight:bold;
+    font-size:10pt;
+    color:#231f20;
+    line-height: 15pt;
+}
+
+.checkable > .body {
+    position: relative;
+    font-size:7pt;
+    color:#656263;
+    left: 0.302in;
+    margin-right: 0.30in;
+    min-width: 0.1in; 
+    min-height: 12pt;
+    line-height: 10.5pt;
+}
+
+#starting_moves .checkable, .flex .hint {
+    display: inline-block;
+    width: 2.26in;
+}
+
+#starting_moves .checkable > .title {
+    font-weight:bold;
+    font-size:10pt;
+    color:#231f20;
+    line-height: 14pt;
+}
+
+.flex {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    height: 5.9in;
+}
+
+.flex .hint {
+    font-style:italic;
+}
+
+#starting_moves b {
+    color: #231f20;
+}
+
+#starting_moves ul  {
+    padding-left: 0.04in;
+}
+
+#starting_moves ul > .checkable {
+    padding: 0in;
+    min-height: 0in;
+}
+
+#starting_moves ul > .checkable > label {
+    height: 0.099in;
+    width: 0.097in;
+}
+
+#starting_moves ul > .checkable > label > input + span {
+    left: 0in;
+    top: 0in;
+}
+#starting_moves ul > .checkable > .title {
+    font-weight:300;
+    font-size:7pt;
+    line-height:7pt;
+    color:#656263;
+    left: 0.15in; 
 }
