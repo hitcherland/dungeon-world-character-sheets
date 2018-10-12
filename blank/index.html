@@ -1,0 +1,84 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dungeon World: Barbarian</title>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../js/jsonc.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/classic.css">
+        <link rel="stylesheet" type="text/css" href="blank.css">
+    </head>
+    <body>
+        <div id="page">
+            <div id="look">
+                <div class="header">LOOK</div>
+                <div class="hint">Choose one for each, or write your own:</div>
+                <div><span class="key">BODY:</span><span contenteditable="true">hola</span></div>
+                <div><span class="key">EYES:</span><span contenteditable="true"></span></div>
+                <div><span class="key">DECORATION:</span contenteditable="true"><span></span></div>
+                <div><span class="key">CLOTHES:</span><span contenteditable="true"></span></div>
+            </div>
+            <div id="armor">
+                <div class="header">ARMOR</div>
+                <div class="value" contenteditable="true">0</div>
+            </div>
+            <div id="hit_points">
+                <div class="header">HIT POINTS</div>
+                <div class="value"><span contenteditable="true">0</span><span contenteditable="true">0</span></div>
+                <div class="hint">
+                    <span>Max (<span contenteditable="true">8</span>+Constitution)</span>
+                    <span>Current</span>
+                </div>
+            </div>
+            <div id="damage">
+                <div class="header">DAMAGE</div>
+                <input class="value" value="D6"/>
+            </div>
+            <div id="attributes">
+                <div>
+                    <div>Strength</div>
+                    <div>STR</div>
+                    <label>Weak<span>-1</span>
+                        <input type="checkbox"><span/>
+                    </label>
+                </div>
+                <div>
+                    <div>Dexterity</div>
+                    <div>Dex</div>
+                    <label>Shaky<span>-1</span>
+                        <input type="checkbox"><span/>
+                    </label>
+                </div>
+                <div>
+                    <div>Constitution</div>
+                    <div>CON</div>
+                    <label>Sick<span>-1</span>
+                        <input type="checkbox"><span/>
+                    </label>
+                </div>
+                <div>
+                    <div>Intelligence</div>
+                    <div>INT</div>
+                    <label>Stunned<span>-1</span>
+                        <input type="checkbox"><span/>
+                    </label>
+                </div>
+                <div>
+                    <div>Wisdom</div>
+                    <div>WIS</div>
+                    <label>Confused<span>-1</span>
+                        <input type="checkbox"><span/>
+                    </label>
+                </div>
+                <div>
+                    <div>Charisma</div>
+                    <div>CHA</div>
+                    <label>Scarred<span>-1</span>
+                        <input type="checkbox"><span/>
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+	</body>
+</html>
