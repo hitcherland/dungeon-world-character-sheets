@@ -555,7 +555,7 @@ body {
 }
 
 .checkable {
-    padding: 0.05in 0 0.05in 0;
+    padding: 0.09in 0 0.09in 0;
     min-height: 0.34in;
     position: relative;
 }
@@ -586,7 +586,7 @@ body {
     min-width: 0.1in; 
     min-height: 15pt;
     font-weight:bold;
-    font-size:10pt;
+    font-size:9.6pt;
     color:#231f20;
     line-height: 15pt;
 }
@@ -596,22 +596,23 @@ body {
     font-size:7pt;
     color:#656263;
     left: 0.302in;
-    margin-right: 0.30in;
+    margin-right: 0.302in;
     min-width: 0.1in; 
     min-height: 12pt;
-    line-height: 10.5pt;
+    line-height: 7pt;
 }
 
-#starting_moves .checkable, .flex .hint {
+.moves .checkable, .flex .hint {
     display: inline-block;
     width: 2.26in;
 }
 
-#starting_moves .checkable > .title {
+.moves .checkable > .title {
     font-weight:bold;
     font-size:10pt;
     color:#231f20;
     line-height: 14pt;
+    text-transform: capitalize;
 }
 
 .flex {
@@ -629,26 +630,26 @@ body {
     color: #231f20;
 }
 
-#starting_moves ul  {
+#starting_moves ul {
     padding-left: 0.04in;
 }
 
-#starting_moves ul > .checkable {
+.moves ul > .checkable {
     padding: 0in;
     min-height: 0in;
 }
 
-#starting_moves ul > .checkable > label {
+.moves ul > .checkable > label {
     height: 0.099in;
     width: 0.097in;
 }
 
-#starting_moves ul > .checkable > label > input + span {
+.moves ul > .checkable > label > input + span {
     left: 0in;
     top: 0in;
 }
 
-#starting_moves ul > .checkable > .title {
+.moves ul > .checkable > .title {
     font-weight:300;
     font-size:7pt;
     line-height:7pt;
@@ -680,14 +681,16 @@ body {
 
 #starting_gear {
     width: 2.201in;
-    line-height:0.280in;
     left: 0.226in;
     top: 1.130in;
+    bottom: 0.5in;
 }
 
 #starting_gear .header {
     background-image: url( 'header_10.svg' );
     text-indent: 0.074in;
+    line-height:0.280in;
+    height: 0.43in;
 }
 
 #starting_gear .value {
@@ -704,24 +707,56 @@ body {
 #starting_gear .value > * {
     position: absolute;
     width: 50%;
+    font-size: 10pt;
 }
-#starting_gear .value > :nth-child( 1 ) {
+#starting_gear .load .value > :nth-child( 1 ) {
     text-align: right;
     margin-right: 0.03in;
     right: 50%;
 }
 
-#starting_gear .value > :nth-child( 2 ) {
+#starting_gear .load .value > :nth-child( 2 ) {
     margin-left: 0.03in;
     left: 50%;
     text-align: left;
 }
 
-#starting_gear .hint {
+#starting_gear .load .hint {
     position: absolute;
     left: 0.518in;
     top: 0.2in;
     width: 1.658in;
+    line-height:0.280in;
+    height:0.280in;
+}
+
+#starting_gear > .load + * {
+    top: 0.28in;
+}
+
+#starting_gear > * {
+    font-size: 7pt;
+}
+
+#starting_gear > * {
+    line-height: normal;
+}
+
+#starting_gear .checkable {
+    padding: 0;
+    min-height: 0.24in;
+    width: 2.003in;
+}
+#starting_gear .checkable .title {
+    display: inline-block;
+}
+#starting_gear .checkable .body {
+    display: inline;
+}
+#starting_gear .checkable .title, #starting_gear .checkable .body {
+    margin-right: 0;
+    font-size: 7pt;
+    width: 
 }
 
 #starting_gear .hint > :first-child {
@@ -730,6 +765,31 @@ body {
 
 #starting_gear .hint > :last-child {
     float:right;
+}
+
+#starting_gear #notes {
+    width: 100%;
+    bottom: 0;
+    top: 2.4in;
+    position:absolute;
+}
+
+#starting_gear #notes textarea {
+    font-family: 'Averia Libre';
+    color:#656263;
+    width: 100%;
+    resize: none;
+    background-image: -webkit-linear-gradient(white, white 6.2pt, #ccc 6.2pt, #ccc 7pt, white 7pt);
+    background-image: -moz-linear-gradient(white, white 6.2pt, #ccc 6.2pt, #ccc 7pt, white 7pt);
+    background-image: -ms-linear-gradient(white, white 6.2pt, #ccc 6.2pt, #ccc 7pt, white 7pt);
+    background-image: -o-linear-gradient(white, white 6.2pt, #ccc 6.2pt, #ccc 7pt, white 7pt);
+    background-image: linear-gradient(white, white 6.2pt, #ccc 6.2pt, #ccc 7pt, white 7pt);
+    background-size: 100% 7pt;
+    border: 0px;
+    line-height: 7pt;
+    font-size: 7pt;
+    text-align: left;
+    height: 100%;
 }
 
 #advanced_moves {
@@ -746,4 +806,13 @@ body {
 
 #advanced_moves > .hint {
     font-style: italic;
+    padding-bottom: 0.1in;
+}
+
+#advanced_moves > .flex {
+    height: 4.848in;
+}
+
+#advanced_moves ul  {
+    padding-left:0.2in;
 }

@@ -7,7 +7,7 @@
         <link rel="stylesheet" type="text/css" href="blank.css">
     </head>
     <body>
-        <div id="page">
+        <div class="page">
             <div id="class" contenteditable="true">The Barbarian</div>
             <div id="name"><span>NAME</span><span contenteditable="true">your name here</span></div>
             <div id="name_hint" class="hint">
@@ -131,7 +131,7 @@
                     </label>
                 </div>
             </div>
-            <div id="starting_moves">
+            <div id="starting_moves" class="moves">
                 <div class="header">STARTING MOVES</div>
                 <div class="flex">
                     <div class="hint">Choose one of these to start with:</div>
@@ -196,5 +196,175 @@
                 </div>
             </div>
         </div>
+        <div class="page">
+            <div id="class" contenteditable="true">The Barbarian</div>
+            <div id="coin">
+                <div class="header">COIN</div>
+                <div class="value" contenteditable="true">0</div>
+            </div>
+            <div id="starting_gear">
+                <div class="header">STARTING GEAR</div>
+                <div class="load">
+                    <div class="value">
+                        <span contenteditable="true">0</span><span contenteditable="true">0</span>
+                    </div>
+                    <div class="hint">
+                        <span>Max Load (<span contenteditable="true">8</span>+STR)</span>
+                        <span>Current</span>
+                    </div>
+                </div>
+                <div><b>Dungeon Rations</b><span>(5 uses, 1 weight)</span></div>
+                <div><b>Dagger</b><span>(hand, 1 weight)</span></div>
+                <div>Some <b>Token</b> of where you've travelled or where you're from</div>
+                <div>
+                    <div class="hint">Choose your weapon:</div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Axe</div>
+                        <div class="body">(close, 1 weight)</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Two-handed Sword</div>
+                        <div class="body">(close, +1 damage, 2 weight)</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="hint">Choose one</div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Adventuring Gear</div>
+                        <div class="body">(5 uses, 1 weight) and </div>
+                        <div class="title">Dungeon Rations</div>
+                        <div class="body">(5 uses, ration, 1 weight)</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Chainmail</div>
+                        <div class="body">(1 armor, worn, 1 weight)</div>
+                    </div>
+                </div>
+                <div id="notes"><textarea></textarea></div>
+            </div>
+            <div id="advanced_moves" class="moves">
+                <div class="header">ADVANCED MOVES</div>
+                <div class="hint">When you gain a level from 2-10, you may choose from these moves.</div>
+                <div class="flex">
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Still Hungry</div>
+                        <div class="body">Choose an additional appetite.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Appetite for Destruction</div>
+                        <div class="body">Take a move from the fighter, bard or thief class list. You may not take multiclass moves from those classes.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">My Love For You Is Like a Truck</div>
+                        <div class="body">When you <b>perform a feat of strength</b>, name someone present whom you have impressed and take +1 forward to parley with them.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">What Is Best In Life</div>
+                        <div class="body">At the end of a session, if during this session you have crushed your enemies, seen them driven before you, or have heard the lamentations of their kinfolk mark XP.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Wide-Wanderer</div>
+                        <div class="body">You've travelled the wide world over. When you <b>arrive someplace</b> ask the GM about any important traditions, rituals, and so on, they'll tell you what you need to know.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Usurper</div>
+                        <div class="body">When you <b>prove yourself superior to a person in power</b>, take +1 forward with their followers, underlings, and hangers on.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Khan of Khans</div>
+                        <div class="body">Your hirelings always accept the gratuitous fulfillment of one of your appetites as payment.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Samson</div>
+                        <div class="body">You may take a debility to immediately break free of any physical or mental restraint.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Smash!</div>
+                        <div class="body">When you <b>hack and slash</b>, on a 12+ deal your damage and choose something physical your target has (a weapon, their position, a limb): they lose it.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Indestructible Hunger</div>
+                        <div class="body">When you <b>take damage</b> you can choose to take -1 ongoing until you sate one of your appetites instead of taking the damage. If you already have this penalty you cannot choose this option.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Eye for Weakness</div>
+                        <div class="body">When you <b>discern realities</b> add "What here is weak or vulnerable?" to the list of questions you can ask.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">On the Move</div>
+                        <div class="body">When you <b>defy a danger caused by movement</b> (maybe falling off a narrow bridge or rushing past an armed guard) take +1.</div>
+                    </div>
+                </div>
+                <div class="hint">When you gain a level from 6-10, you may choose from these moves.</div>
+                <div class="flex">
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">A Good Day to Die</div>
+                        <div class="body">As long as you have less than your Con in current HP (or 1, whichever is higher) take +1 ongoing.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Kill 'em All</div>
+                        <div class="body">Take another move from the Fighter, Bard or Thief class list.  You may not take multiclass moves from those classes.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">War Cry</div>
+                        <div class="body">When you <b>enter battle with a show of force</b> (a shout, a rallying cry, a battle dance) roll+Cha.  On a 10+ both, on a 7-9 one or the other.
+                            <ul>   
+                                <li>
+                                    <div class="title">Your allies are rallied and take +1 forward</div>
+                                </li>
+                                <li>
+                                    <div class="title">Your enemies feel fear and act accordingly (avoiding you, hiding, attacking with fear-driven abandon)</div>
+                                </li>
+                            <ul>
+                        </div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Mark of Might</div>
+                        <div class="body">When you take this move and <b>spend some uninterrupted time reflecting on your past glories</b> you may mark yourself with a symbol of your power (a long braid tied with bells, ritual scars or tattoos, etc.) Any intelligent mortal creature who sees this symbol knows instinctively that you are a force to be reckoned with and treats you appropriately.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">More! Always More!</div>
+                        <div class="body">When you <b>satisfy an appetite to the extreme</b> (destroying something unique and significant, gaining enormous fame, riches, power, etc.) you may choose to resolve it. Cross it off the list and mark XP. While you may pursue that appetite again, you no longer feel the burning desire you once did. In its place, choose a new appetite from the list or write your own.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">The One Who Knocks</div>
+                        <div class="body">When you <b>defy danger</b>, on a 12+ you turn the danger back on itself, the GM will describe how.</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">Healthy Distrust</div>
+                        <div class="body">Whenever the unclean magic wielded by mortal men causes you to <b>defy danger</b>, treat any result of 6- as a 7-9</div>
+                    </div>
+                    <div class="checkable">
+                        <label><input type="checkbox"><span/></label>
+                        <div class="title">For the Blood God</div>
+                        <div class="body">You are initiated in the old ways, the ways of sacrifice. Choose something your gods (or the ancestor spirits, or your totem, etc) value - gold, blood, bones or the like. When you <b>sacrifice those things as per your rites and rituals</b>, roll+wis. On a 10+ the GM will grant you insight into your current trouble or a boon to help you. On a 7-9 the sacrifice is not enough and your gods take of your flesh as well, but still grant you some insight or boon. On a miss, you earn the ire of the fickle spirits.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 	</body>
 </html>
+
