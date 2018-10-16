@@ -1,0 +1,651 @@
+@font-face {    font-family:'Averia Libre';
+    font-style:normal;
+    font-weight:400;
+    src:local('Averia Libre Regular'), local('AveriaLibre-Regular'), url(fonts/Averia_Libre/AveriaLibre-Regular.ttf);
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {    font-family:'Metamorphous';
+    font-style:normal;
+    font-weight:400;
+    src:local('Metamorphous'), url(fonts/Metamorphous/Metamorphous-Regular.ttf);
+    unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+html, body {
+    margin: 0 0;
+    font-family: 'Averia Libre', cursive;
+    background-color: #444;
+}
+
+.grid-item {
+    width: 50vw;
+    position: relative;
+}
+
+.grid-item--width2{ 
+    width: 100vw;
+}
+
+*[contenteditable],
+input,
+textarea {
+    color:#656263;
+}
+
+.hint {
+    font-size:7pt;
+    color:#656263;
+    font-weight:300;
+}
+
+.page {
+    width: 100vw;
+    background: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0 auto 0 auto;
+    padding-bottom: 5vw;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.page:nth-child( odd ) {
+background-image: url('background_1.svg' );
+}
+
+.page:nth-child( even ) {
+background-image: url('background_2.svg' );
+}
+
+.page:nth-child( even ) #class {
+display: none;
+}
+
+#class {
+    font-family: 'Metamorphous';
+    text-transform: uppercase;
+    font-size:7vw;
+    text-align:center;
+    color:#231f20;
+    height: 10vw;
+}
+
+#class:before, #class:after {
+    position: absolute;
+    content: " ";
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 6vw;
+    height: 10vw;
+    background-image: url( 'banner_1.svg' );
+}
+
+#class:before {
+    left: 5vw;
+}
+
+#class:after {
+    right: 5vw;
+}
+
+#name {
+    background-image: url( 'name.svg' );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 90vw;
+    margin: 0 5vw 0 5vw;
+    line-height: 3vw;
+    text-indent: 2vw;
+    font-size:3vw;
+}
+#name > * { font-size: inherit; }
+#name > :last-child { padding-left: 1vw; }
+#name > :first-child, #level > :first-child, #xp > :first-child {
+    color:#231f20;
+    text-transform: uppercase;
+    float:left;
+}
+#name > :last-child, #level > :last-child, #xp > :last-child {
+    flex-grow: 1;
+}
+
+#level, #xp { 
+    height: 4vw;
+    font-size: 2vw;
+    line-height: 4vw;
+}
+
+#level > :first-child {
+    position: absolute;
+    right: 6vw;
+}
+
+#level > :first-child, #xp > :first-child {
+    padding-left: 1vw;
+}
+
+#level > :last-child {
+    position: absolute;
+    background-image: url( 'level.svg' );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 4vw;
+    height: 4vw;
+    line-height: 4vw;
+    right: 1vw;
+    text-align: center;
+}
+
+#xp {
+    background-image: url( 'xp.svg' );
+    background-repeat: no-repeat;
+}
+
+#xp > :last-child {
+    padding-left: 1vw;
+}
+
+#name_hint {
+    text-align: center;
+    font-style:italic;
+    font-weight:300;
+    font-size:1vw;
+    color:#656263;
+}
+
+#name_hint * > :first-child {
+    padding-right: 1vw;
+}
+
+.header {
+    color: white;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 3vw;
+    line-height: 3vw;
+    text-indent: 2vw;
+    font-size: 3vw;
+}
+
+.value {
+    color: black;
+    text-align:center;
+    top: 0;
+    z-index: 1;
+    font-size: 2vw;
+    width: 3vw;
+    height: 3vw;
+    line-height: 3vw;
+}
+
+.value::before {
+    content: " ";
+    background-repeat: no-repeat;
+    background-size: 100%;
+    z-index: -1;
+    position: absolute;
+    width: 4vw;
+    height: 5vw;
+    top: -0.5vw;
+    left: -0.5vw;
+}
+
+#armor, #hit_points, #damage {
+    margin: 1vw 0;
+}
+
+#look .header { background-image: url('header_1.svg' ); }
+#armor .header { background-image: url('header_2.svg' ); }
+#hit_points .header { background-image: url('header_3.svg' ); }
+#damage .header { background-image: url('header_4.svg' ); }
+#alignment .header { background-image: url( 'header_5.svg' ); }
+#bonds .header { background-image: url( 'header_6.svg' ); }
+#race .header { background-image: url( 'header_7.svg' ); }
+#starting_moves .header { background-image: url( 'header_8.svg' ); }
+
+#armor .value::before { background-image: url('armor.svg' ); }
+#hit_points .value::before { background-image: url('hit_points.svg' ); }
+#damage .value[value="D10"] { background-image: url('damage_d10.svg' ); }
+#damage .value[value="D6"] { background-image: url('damage_d6.svg' ); }
+
+#bonds .hint, #look .hint { font-style: italic; }
+
+#look > * { padding: 0 0 0.5vw 0.5vw; }
+#look .key {
+    font-weight:bold;
+    font-size:1.5vw;
+    color:#231f20;
+}
+#look .key + span {
+    font-size:1.5vw;
+    margin-left: 0.1vw;
+}
+
+#armor .value, #hit_points .value, #damage .value  {
+    position: absolute;
+    top: 0;
+    right: 10vw;
+    z-index: 1;
+}
+
+#hit_points .value::before {
+    width: 5vw;
+    left:-1vw;
+}
+
+#hit_points .value > span {
+    font-size: 1.5vw;
+    position:absolute;
+    width: 50%;
+}
+
+#hit_points .value > span:nth-of-type( 1 ) {
+    right: 50%;
+    text-align: right;
+    padding-right: 0.5vw;
+}
+
+#hit_points .value > span:nth-last-of-type( 1 ) {
+    left: 50%;
+    text-align: left;
+    padding-left: 0.05vw;
+}
+
+#hit_points .hint {
+    text-align: right;
+    width: 50vw;
+    height: 1vw;
+    line-height:1vw;
+}
+
+#hit_points .hint > span:nth-of-type( 1 ) {
+    position: absolute;
+    right: 14vw;
+}
+
+#hit_points .hint > span:nth-last-of-type( 1 ) {
+    position: absolute;
+    right: 6vw;
+}
+
+#damage .value {
+    background-color: transparent;
+    background-image: url('damage.svg' );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border: 0;
+    resize: none;
+    overflow: hidden;
+    text-shadow: -1px -1px white,
+                 -1px +1px white,
+                 +1px +1px white,
+                 +1px -1px white;
+    font-family:'Averia Libre';
+    font-size: 3vw;
+    width: 6vw;
+    height: 5vw;
+    top: -1vw;
+    right: 8.75vw
+}
+
+#bonds *[contenteditable] {
+    font-weight:300;
+    font-size:1.5vw;
+    color:#656263;
+    padding: 0.1vw 0 0.1vw 0;
+    min-height:3vw;
+}
+
+.checkable {
+    padding: 0.1vw 0 0.1vw 0;
+    min-height: 2vw;
+    position: relative;
+    left: 1vw;
+}
+
+.checkable > label {
+    display: inline-block;
+    background-image: url( 'checkbox.svg' );
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 2.5vw;
+    height: 2.5vw;
+    cursor: pointer;
+}
+
+.checkable > label > input + span {
+    background-image: none;
+    width: 2.5vw;
+    height: 2.5vw;
+    left: 0vw;
+    top: 0vw;
+}
+
+.checkable > .title {
+    position: relative;
+    top: -0.5vw;
+    display: inline-block;
+    font-weight: bold;
+    min-width: 10vw; 
+    font-size: 2vw;
+    min-height: 2.5vw;
+    line-height: 2.5vw;
+    color:#231f20;
+}
+
+.checkable > .body {
+    display: block;
+    color:#656263;
+    margin-left: 3vw;
+    min-width: 4vw; 
+    min-height: 2vw;
+    font-size: 1.5vw;
+    line-height: 1.5vw;
+    width: 45vw;
+}
+
+#attributes { text-align: center; }
+#attributes > div.hint {
+    display:block;
+    background-image: none;
+    width: auto;
+    height: auto;
+    margin: auto;
+    text-align:center;
+}
+
+#attributes > div {
+    position: relative;
+    display: inline-block;
+    background-image: url('attribute.svg' );
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 15vw;
+    height: 12.3vw;
+}
+
+#attributes > div > :nth-child( 1 ) {
+    position: absolute;
+    display: flex;
+    top: 1.25vw;
+    left: 10%;
+    width: 80%;
+    font-size: 1.5vw;
+    color:#231f20;
+}
+
+#attributes > div > :nth-child( 1 ) > span:last-child {
+    text-align: right;
+    flex-grow: 1;
+    color:#656263;
+}
+
+#attributes > div > :nth-child( 2 ) {
+    position: absolute;
+    text-transform: uppercase;
+    bottom: 1vw;
+    left: 1vw;
+    font-size: 2vw;
+    width: 7vw;
+    color:#231f20;
+}
+#attributes > div > :nth-child( 2 ) > span:last-child {
+    display: block;
+    text-align: center;
+    color:#656263;
+    width:100%;
+    font-size: 2.5vw;
+}
+
+#attributes > div > :nth-child( 3 ) {
+    position: absolute;
+    top: 4.7vw;
+    right: 0.5vw;
+    padding-right: 2vw;
+    color:white;
+    font-size:1vw;
+}
+
+#attributes > div > :nth-child( 3 ),
+.checkable > label {
+    cursor: pointer;
+}
+
+#attributes > div > :nth-child( 3 ) input, 
+.checkable > label > input {
+    display: none;
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+#attributes > div > :nth-child( 3 ) input + span {
+    background-image: none;
+    width: 1vw;
+    height: 1vw;
+    right: 0.4vw;
+    top: 0.25vw;
+    cursor: pointer;
+}
+
+#attributes > div > :nth-child( 3 ) input:checked + span,
+.checkable > label > input:checked + span {
+    position: absolute;
+    background-image: url( 'checkmark.svg' );
+    background-size: 100%;
+}
+
+.moves .checkable > .title {
+    font-weight:bold;
+    color:#231f20;
+    text-transform: capitalize;
+}
+
+.moves .hint {
+    text-align: center;
+    font-style:italic;
+    padding: 1vw 0;
+}
+
+.moves b {
+    color: #231f20;
+}
+
+.moves ul {
+    padding-left: 1vw;
+    list-style: none;
+}
+
+.moves ul > .checkable {
+    padding: 0;
+    min-height: 0;
+}
+
+.moves ul > .checkable > label {
+    height: 2vw;
+    width: 2vw;
+}
+
+.moves ul > .checkable > label > input + span {
+    left: 0;
+    top: 0;
+    height: 2vw;
+    width: 2vw;
+}
+
+.moves ul > .checkable > .title {
+    position: relative;
+    font-weight:300;
+    font-size: 1.5vw;
+    line-height: 1.5vw;
+    min-height: 1.5vw;
+    color: #656263;
+    left: 0.5vw; 
+}
+
+#coin {
+    width: 2.213in;
+    line-height:0.295in;
+    left: 0.235in;
+    top: 0.561in;
+}
+
+#coin .header {
+    background-image: url( 'header_9.svg' );
+    text-indent: 0.689in;
+}
+
+#coin .value {
+    width: 0.511in;
+    height: 0.457in;
+    top: -0.082in;
+    left: 0.103in;
+    line-height:0.457in;
+    background-image: url( 'coin.svg' );
+    background-repeat: no-repeat;
+    font-size: 10pt;
+    color:#656263;
+}
+
+#starting_gear {
+    width: 2.201in;
+    left: 0.226in;
+    top: 1.130in;
+    bottom: 0.5in;
+}
+
+#starting_gear .header {
+    background-image: url( 'header_10.svg' );
+    text-indent: 0.074in;
+    line-height:0.280in;
+    height: 0.43in;
+}
+
+#starting_gear .value {
+    background-image: url( 'load.svg' );
+    background-repeat: no-repeat;
+    left: 1.305in;
+    top: -0.172in;
+    width: 0.538in;
+    height: 0.673in;
+    line-height: 0.75in;
+    color:#656263;
+}
+
+#starting_gear .value > * {
+    position: absolute;
+    width: 50%;
+    font-size: 10pt;
+}
+#starting_gear .load .value > :nth-child( 1 ) {
+    text-align: right;
+    margin-right: 0.03in;
+    right: 50%;
+}
+
+#starting_gear .load .value > :nth-child( 2 ) {
+    margin-left: 0.03in;
+    left: 50%;
+    text-align: left;
+}
+
+#starting_gear .load .hint {
+    position: absolute;
+    left: 0.518in;
+    top: 0.2in;
+    width: 1.658in;
+    line-height:0.280in;
+    height:0.280in;
+}
+
+#starting_gear > .load + * {
+    top: 0.28in;
+}
+
+#starting_gear > * {
+    font-size: 7pt;
+}
+
+#starting_gear > * {
+    line-height: normal;
+}
+
+#starting_gear .checkable {
+    padding: 0;
+    min-height: 0.24in;
+    width: 2.003in;
+}
+#starting_gear .checkable .title {
+    display: inline-block;
+}
+#starting_gear .checkable .body {
+    display: inline;
+}
+#starting_gear .checkable .title, #starting_gear .checkable .body {
+    margin-right: 0;
+    font-size: 7pt;
+    width: 
+}
+
+#starting_gear .hint > :first-child {
+    float:left;
+}
+
+#starting_gear .hint > :last-child {
+    float:right;
+}
+
+#starting_gear #notes {
+    width: 100%;
+    bottom: 0;
+    top: 2.4in;
+    position:absolute;
+}
+
+#starting_gear #notes textarea {
+    font-family: 'Averia Libre';
+    color:#656263;
+    width: 100%;
+    resize: none;
+    background-image: -webkit-linear-gradient(white, white 6.2px, #ccc 6.2px, #ccc 7px, white 7px);
+    background-image: -moz-linear-gradient(white, white 6.2px, #ccc 6.2px, #ccc 7px, white 7px);
+    background-image: -ms-linear-gradient(white, white 6.2px, #ccc 6.2px, #ccc 7px, white 7px);
+    background-image: -o-linear-gradient(white, white 6.2px, #ccc 6.2px, #ccc 7px, white 7px);
+    background-image: linear-gradient(white, white 6.2px, #ccc 6.2px, #ccc 7px, white 7px);
+    background-size: 100%;
+    border: 0;
+    line-height: 7pt;
+    font-size: 7pt;
+    text-align: left;
+    height: 100%;
+}
+
+#advanced_moves {
+    left: 2.638in;
+    top: 0.559in;
+    width: 4.596in;
+}
+
+#advanced_moves .header {
+    background-image: url( 'header_11.svg' );
+    line-height:0.294in;
+    text-indent:0.063in;
+}
+
+#advanced_moves > .hint {
+    font-style: italic;
+    padding-bottom: 0.1in;
+}
+
+#advanced_moves > .flex {
+    height: 4.848in;
+}
+
+#advanced_moves ul  {
+    padding-left:0.2in;
+}
