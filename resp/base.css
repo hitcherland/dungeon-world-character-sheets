@@ -1,0 +1,29 @@
+[dw_value="class"] {
+    font-size: xx-large; 
+}
+
+.pick > * > :nth-child(1) {
+    display: inline-block;
+}
+
+.pick > * > :nth-child(2) {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.pick > * > :nth-child(3) {
+    font-size: smaller;
+}
+
+.move > :nth-child(1) {
+    display: inline-block;
+}
+
+.move > :nth-child(2) {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.move > :nth-child(3) {
+    font-size: smaller;
+}

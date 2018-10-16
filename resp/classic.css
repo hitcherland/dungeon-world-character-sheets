@@ -1,0 +1,53 @@
+/* latin */
+@font-face {
+  font-family: 'Averia Libre';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Averia Libre Regular'), local('AveriaLibre-Regular'), url(../fonts/Averia_Libre/AveriaLibre-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Metamorphous';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Metamorphous'), url(../fonts/Metamorphous/Metamorphous-Regular.ttf);
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+body {
+    font-family: 'Averia Libre';
+}
+
+body:before {
+    content: "DUNGEON WORLD CHARACTER SHEETS";
+    font-family: 'Metamorphous';
+}
+
+[contenteditable] {
+    color: gray;
+}
+
+[dw_value="class"] { font-family: 'Metamorphous'; }
+.name.hint { display: none; }
+
+[dw_value]:before {
+    color: black;
+    padding-right: 1em;
+    text-transform: uppercase;
+}
+[dw_value] > div { display: inline-block; }
+
+[dw_value="name"]:before { content: "Name"; }
+[dw_value="level"]:before { content: "Level"; }
+[dw_value="xp"]:before { content: "XP"; }
+[dw_value="armor"]:before { content: "Armor"; }
+[dw_value="hitpoints"]:before { content: "Hitpoints"; }
+[dw_value="damage"]:before { content: "Damage"; }
+[dw_value="coin"]:before { content: "Coin"; }
+[dw_value="load"]:before { content: "Load"; }
+
+[dw_value="damage"] > input:placeholder:before {
+    content: "hello";
+}
