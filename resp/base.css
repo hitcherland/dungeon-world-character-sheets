@@ -1,5 +1,12 @@
-[dw_value="class"] {
-    font-size: xx-large; 
+@media screen and (max-width: 220px) {
+    body { font-size: 6pt; }
+}
+
+body { font-size: 2vw; }
+body * { font-size: inherit; }
+
+input[name="class"] {
+    font-size: 200%; 
 }
 
 .pick > * > :nth-child(1) {

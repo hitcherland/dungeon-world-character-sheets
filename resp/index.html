@@ -1,27 +1,41 @@
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" name="viewport" content="width=device-width">
         <title>Dungeon World: Barbarian</title>
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <link rel="stylesheet" type="text/css" href="base.css">
         <link rel="stylesheet" type="text/css" href="classic.css">
     </head>
     <body>
-        <div dw_value="class" contenteditable="true">The Barbarian</div>
-        <div dw_value="name" contenteditable="true">your name here</div>
-        <div class="name hint">
-            <div><span>NAMES:</span><span>Gorm, Si-Yi, Priscilla, Sen, Xia, Anneira, Haepha, Lur, Shar, Korrin, Nkosi, Fafnir, Qua, Sacer, Vercin’geto, Barbozar, Clovis, Frael, Thra-raxes, Sillius, Sha-Sheena, Khamisi</span></div>
-            <div><span>TITLES:</span><span>the Glorious, the Hungry, the Irascible, the Undefeated, the Gluttonous, Foesmasher, Bonebreaker, the Mirthful, the Melancholic, All-Mighty, the Giant, the Triumphant</span></div>
+        <div value="class">
+            <input name="class" value="The Barbarian"/>
         </div>
-        <div dw_value="level" contenteditable="true">1</div>
-        <div dw_value="xp" contenteditable="true">0</div>
-        <div id="look">
-            <div class="header">LOOK</div>
-            <div class="hint">Choose one for each, or write your own:</div>
-            <div><span class="key">BODY:</span><span contenteditable="true">Mighty thews, long shanks, scrawny, supple</span></div>
-            <div><span class="key">EYES:</span><span contenteditable="true">Tormented, haunted, wild, shrouded</span></div>
-            <div><span class="key">DECORATION:</span><span contenteditable="true">Tattoos, bejeweled, unmarred</span></div>
-            <div><span class="key">CLOTHES:</span><span contenteditable="true">Scraps, silks, scavenger’s outfit, weather-inappropriate</span></div>
+
+        <div value="name">
+            <input name="name" placeholder="your name here"/>
+        </div>
+
+        <div value="level">
+            <input name="level" value="1"/>
+        </div>
+
+        <div value="xp">
+            <input name="xp" value="0"/>
+        </div>
+
+        <div value="look">
+            <div value="body">
+                <input name="look.body" placeholder="Mighty thews, long shanks, scrawny, supple"/>
+            </div>
+            <div>
+                <input name="look.eyes" placeholder="Tormented, haunted, wild, shrouded"/>
+            </div>
+            <div>
+                <input name="look.decoration" playecholder="Tattoos, bejeweled, unmarred"/>
+            </div>
+            <div>
+                <input name="look.cothes" placeholder="Scraps, silks, scavenger’s outfit, weather-inappropriate"/>
+            </div>
         </div>
         <div dw_value="armor" contenteditable="true">0</div>
         <div dw_value="hitpoints">
