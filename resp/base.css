@@ -1,12 +1,64 @@
 @media screen and (max-width: 220px) {
-    body { font-size: 6pt; }
+    body { 
+        font-size: 6pt; 
+    }
+    [value]:before {
+        text-align: center;
+        padding: 0;
+    }
+
+    [value]:before,
+    [value="look"] > [value]:before {
+        min-width: 12ex;
+    }
+
+
+    [value] {
+        width: calc( 100% - 2ex );
+        display: flex;
+        margin: 1ex 0;
+        line-height: 2ex;
+    }
+
+    [value] > * {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    [value="look"] {
+        display: block !important;
+    }
+
+    [value="look"]:before {
+        width: 100%;
+        display: block !important;
+    }
+
+    [value="look"] > [value] {
+        display: flex;
+        margin: 1ex 0;
+    }
+
+    [value="look"] > [value]:before {
+        display: inline-block;
+    }
+
+    [value="look"] > [value] > input {
+        flex-grow: 1;
+    }
+
 }
 
 body { font-size: 2vw; }
-body * { font-size: inherit; }
+body * { 
+    font-size: inherit; 
+    box-sizing: border-box;
+}
 
 input[name="class"] {
-    font-size: 200%; 
+    font-size: 300%; 
+    max-width: 100%;
+    margin-top: 0;
 }
 
 .pick > * > :nth-child(1) {

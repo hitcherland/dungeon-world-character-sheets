@@ -16,38 +16,44 @@
         </div>
 
         <div value="level">
-            <input name="level" value="1"/>
+            <input name="level" type="number" min="1" placeholder="1"/>
         </div>
 
         <div value="xp">
-            <input name="xp" value="0"/>
+            <input name="xp" type="number" min="0" placeholder="0"/>
         </div>
 
         <div value="look">
             <div value="body">
                 <input name="look.body" placeholder="Mighty thews, long shanks, scrawny, supple"/>
             </div>
-            <div>
+            <div value="eyes">
                 <input name="look.eyes" placeholder="Tormented, haunted, wild, shrouded"/>
             </div>
-            <div>
-                <input name="look.decoration" playecholder="Tattoos, bejeweled, unmarred"/>
+            <div value="decoration">
+                <input name="look.decoration" placeholder="Tattoos, bejeweled, unmarred"/>
             </div>
-            <div>
-                <input name="look.cothes" placeholder="Scraps, silks, scavenger’s outfit, weather-inappropriate"/>
+            <div value="clothes">
+                <input name="look.clothes" placeholder="Scraps, silks, scavenger’s outfit, weather-inappropriate"/>
             </div>
         </div>
-        <div dw_value="armor" contenteditable="true">0</div>
-        <div dw_value="hitpoints">
-            <div dw_value="max" contenteditable="true">0</div>
-            <div dw_value="current" contenteditable="true">0</div>
+        <div value="armor">
+            <input name="armor" placeholder="0"/>
         </div>
-        <div dw_value="load">
-            <div class="max" contenteditable="true">0</div>
-            <div class="current" contenteditable="true">0</div>
+        <div value="hitpoints">
+            <input name="max" placeholder="0"/>
+            <input name="current" placeholder="0"/>
         </div>
-        <div dw_value="damage" contenteditable="true">0</div>
-        <div dw_value="coin" contenteditable="true">0</div>
+        <div value="damage">
+            <input name="damage" placeholder="0"/>
+        </div>
+        <div value="load">
+            <input name="max" placeholder="0"/>
+            <input name="current" placeholder="0"/>
+        </div>
+        <div value="coin">
+            <input name="coin" placeholder="0"/>
+        </div>
         <div class="pick alignment">
             <label>
                 <input type="radio" name="alignment" value="Chaotic">

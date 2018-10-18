@@ -20,7 +20,12 @@
     body:before { content: "DUNGEON WORLD CHARACTER SHEETS"; }
 }
 
-body { font-family: 'Averia Libre'; }
+body { 
+    font-family: 'Averia Libre'; 
+    background-image: url( 'images/background_1.svg' );
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 body:before {
     font-family: 'Metamorphous';
     font-size: 100%;
@@ -34,10 +39,19 @@ input {
     font-size: inherit;
     text-align: inherit;
     color: black;
+    background: transparent;
 }
 input:placeholder-shown {
     border: 1px red dashed;
-    box-sizing: border;
+    box-sizing: border-box;
+}
+
+input[type="number"] {
+    width: 5ex;
+}
+
+div[value] > input {
+    background: rgba( 255, 255, 255, 0.4 );
 }
 
 [value]:before {
@@ -52,7 +66,14 @@ input:placeholder-shown {
     text-align: center;
 }
 
-[value="look"]:before { content: "Look"; }
+[value="look"]:before {
+    content: "Look"; 
+    display: table-cell;
+}
+[value="body"]:before { content: "Body"; }
+[value="eyes"]:before { content: "Eyes"; }
+[value="decoration"]:before { content: "Decoration"; }
+[value="clothes"]:before { content: "Clothes"; }
 [value="name"]:before { content: "Name"; }
 [value="level"]:before { content: "Level"; }
 [value="xp"]:before { content: "XP"; }
@@ -61,6 +82,29 @@ input:placeholder-shown {
 [value="damage"]:before { content: "Damage"; }
 [value="coin"]:before { content: "Coin"; }
 [value="load"]:before { content: "Load"; }
+
+[value="look"] { 
+    display: table; 
+    width: 100%;
+}
+[value="look"] > div:before { 
+    display: table-cell;
+    text-align: right;
+}
+[value="look"] > div { 
+    position: relative;
+    display: table-row; 
+    margin: 0 1ex;
+    width: calc( 100% - 2ex );
+}
+[value="look"] > div > *,
+[value="look"] > div > :before { 
+    display: table-cell; 
+}
+
+[value="look"] > div > * { 
+    flex-grow:1;
+}
 
 [value="damage"] > input:placeholder:before {
     content: "hello";
