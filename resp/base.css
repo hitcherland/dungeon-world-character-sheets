@@ -14,7 +14,7 @@
 
 
     [value] {
-        width: calc( 100% - 2ex );
+        width: 100%;
         display: flex;
         margin: 1ex 0;
         line-height: 2ex;
@@ -35,6 +35,7 @@
     }
 
     [value="look"] > [value] {
+        width: 100%;
         display: flex;
         margin: 1ex 0;
     }
@@ -47,6 +48,9 @@
         flex-grow: 1;
     }
 
+    [value] > input {
+        height: 100%;
+    }
 }
 
 body { font-size: 2vw; }
@@ -58,20 +62,16 @@ body * {
 input[name="class"] {
     font-size: 300%; 
     max-width: 100%;
-    margin-top: 0;
+    margin: 0;
 }
 
 .pick > * > :nth-child(1) {
-    display: inline-block;
+    width: auto;
 }
 
 .pick > * > :nth-child(2) {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.pick > * > :nth-child(3) {
     font-size: smaller;
+    width: auto;
 }
 
 .move > :nth-child(1) {
@@ -85,4 +85,58 @@ input[name="class"] {
 
 .move > :nth-child(3) {
     font-size: smaller;
+}
+
+.pick > * {
+    display: block;
+}
+
+.wrapper { position: relative; }
+.jcarousel {
+    position: relative;
+    overflow: hidden;
+    height: 10ex;
+    text-align: center;
+    width: 80vw;
+    left: 10vw;
+}
+
+.jcarousel > * > label {
+    position: relative;
+    float: left;
+    width: 80vw;
+    height: 10ex;
+    border-radius: 1ex;
+}
+
+.jcarousel > * > * > * {
+    display: block;
+}
+
+.jcarousel-wrapper {
+    margin: 2ex auto;
+    width: 80%;
+}
+
+.jcarousel > * {
+    width: 10000em;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.jcarousel * {
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.jcarousel-control-prev { left: calc( 10vw - 1ex); }
+.jcarousel-control-next { right: calc( 10vw - 2ex); }
+
+.jcarousel-control-prev,
+.jcarousel-control-next {
+    position: absolute;
+    top: 0px;
+    text-decoration: none;
+    font-size: 8ex;
 }

@@ -2,9 +2,12 @@
     <head>
         <meta charset="utf-8" name="viewport" content="width=device-width">
         <title>Dungeon World: Barbarian</title>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
+        <script type="text/javascript" src="js/hammer.min.js"></script>
+        <script type="text/javascript" src="js/jquery.hammer.js"></script>
         <link rel="stylesheet" type="text/css" href="base.css">
-        <link rel="stylesheet" type="text/css" href="classic.css">
+<!--        <link rel="stylesheet" type="text/css" href="classic.css"> -->
     </head>
     <body>
         <div value="class">
@@ -54,22 +57,25 @@
         <div value="coin">
             <input name="coin" placeholder="0"/>
         </div>
-        <div class="pick alignment">
-            <label>
-                <input type="radio" name="alignment" value="Chaotic">
-                <div class="title">Chaotic</div>
-                <div class="body">Eschew a convention of the civilized world.</div>
-            </label>
-            <label>
-                <input type="radio" name="alignment" value="Neutral">
-                <div class="title">Neutral</div>
-                <div class="body">Teach someone the ways of your people.</div>
-            </label>
-            <label>
-                <input type="radio" name="alignment" value="Misc">
-                <div class="title" contenteditable="true"></div>
-                <div class="body" contenteditable="true"></div>
-            </label>
+        <div class="wrapper">
+            <div class="jcarousel">
+                <div class="pick alignment">
+                    <label>
+                        <div class="title">Chaotic</div>
+                        <div class="body">Eschew a convention of the civilized world.</div>
+                    </label>
+                    <label>
+                        <div class="title">Neutral</div>
+                        <div class="body">Teach someone the ways of your people.</div>
+                    </label>
+                    <label>
+                        <input class="title" placeholder="Custom"/>
+                        <input class="body" placeholder="put your stuff here"/>
+                    </label>
+                </div>
+            </div>
+            <a href="#" class="jcarousel-control-prev">&lsaquo;</a>
+            <a href="#" class="jcarousel-control-next">&rsaquo;</a>
         </div>
         <div class="bonds">
             <div class="value" contenteditable="true">______ is puny and foolish, but amusing to me.</div>
@@ -347,6 +353,41 @@
             <div class="body">You are initiated in the old ways, the ways of sacrifice. Choose something your gods (or the ancestor spirits, or your totem, etc) value - gold, blood, bones or the like. When you <b>sacrifice those things as per your rites and rituals</b>, roll+wis. On a 10+ the GM will grant you insight into your current trouble or a boon to help you. On a 7-9 the sacrifice is not enough and your gods take of your flesh as well, but still grant you some insight or boon. On a miss, you earn the ire of the fickle spirits.</div>
         </label>
         <div id="notes"><textarea></textarea></div>
+        <script>
+            $(function() {
+                $('.jcarousel').jcarousel({
+                    wrap: 'circular',
+                });
+
+                $('.jcarousel-control-prev')
+                    .on('jcarouselcontrol:active', function() {
+                        $(this).removeClass('inactive');
+                    })
+                    .on('jcarouselcontrol:inactive', function() {
+                        $(this).addClass('inactive');
+                    })
+                    .jcarouselControl({
+                        target: '-=1'
+                    });
+
+                $('.jcarousel-control-next')
+                    .on('jcarouselcontrol:active', function() {
+                        $(this).removeClass('inactive');
+                    })
+                    .on('jcarouselcontrol:inactive', function() {
+                        $(this).addClass('inactive');
+                    })
+                    .jcarouselControl({
+                        target: '+=1'
+                    });
+                });
+        
+                $('.jcarousel').hammer().on( 'panleft', function(ev) {
+                    $( this ).jcarousel( 'scroll', '+=1' );
+                }).on( 'panright', function(ev) {
+                    $( this ).jcarousel( 'scroll', '-=1' );
+                });
+        </script>
 	</body>
 </html>
 
